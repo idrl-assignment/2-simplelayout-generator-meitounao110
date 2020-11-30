@@ -2,12 +2,11 @@
 数据生成的主要逻辑
 """
 
-
 import numpy as np
 
 
 def generate_matrix(
-    board_grid: int, unit_grid: int, unit_n: int, positions: list
+        board_grid: int, unit_grid: int, unit_n: int, positions: list
 ) -> np.ndarray:
     """生成指定布局矩阵
 
@@ -19,4 +18,14 @@ def generate_matrix(
     Returns:
         np.ndarray: 布局矩阵
     """
-    raise NotImplementedError  # TODO: 实现布局矩阵的生成
+    matrix = np.zeros([board_grid, board_grid], dtype=int)
+    for i in range(unit_n):
+        pos = positions[i] - 1
+        num = board_grid / unit_grid
+        pos_column = int((pos % num) * unit_grid)
+        pos_row = int((pos // num) * unit_grid)
+        pos_row_end = pos_row + unit_grid
+        pos_column_end = pos_column + unit_grid
+        matrix[pos_row:pos_row_end, pos_column:pos_column_end] = 1
+    print(matrix)
+    return matrix
