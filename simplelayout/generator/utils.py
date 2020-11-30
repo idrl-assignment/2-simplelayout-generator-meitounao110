@@ -8,7 +8,7 @@ import scipy.io as sio
 
 
 def save_matrix(matrix, file_name):
-    sio.savemat(f'{file_name}.mat', mdict={'matrix', matrix})
+    sio.savemat(f'{file_name}.mat', mdict={'matrix': matrix})
     # TODO: 存储 matrix 到 file_name.mat, mdict 的 key 为 "matrix"
 
 
