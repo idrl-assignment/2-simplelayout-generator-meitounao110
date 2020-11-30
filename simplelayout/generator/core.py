@@ -27,4 +27,3 @@ def generate_matrix(
         matrix[pos_row:pos_row + unit_grid, pos_column:pos_column + unit_grid] = 1
     print(matrix)
     return matrix
-
