@@ -24,7 +24,8 @@ def generate_matrix(
         num = board_grid / unit_grid
         pos_column = int((pos % num) * unit_grid)
         pos_row = int((pos // num) * unit_grid)
-        matrix[pos_row:pos_row + unit_grid,
-        pos_column:pos_column +unit_grid] = 1
+        pos_row_end = pos_row + unit_grid
+        pos_column_end = pos_column + unit_grid
+        matrix[pos_row:pos_row_end, pos_column:pos_column_end] = 1
     print(matrix)
     return matrix
